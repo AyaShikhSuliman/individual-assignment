@@ -1,0 +1,26 @@
+﻿@page
+@model CookingOrganizer.Pages.RegisterModel
+@{
+}
+
+
+<body class="home">
+    <div id="register-form-wrap">
+        <h2>Registration form</h2>
+        <form id="register-form" method="post">
+            <p>
+                <input type="text" asp-for="Name" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+            </p>
+            <p>
+                <input type="password" asp-for="Password" placeholder=" Password" required><i class="validation"><span></span><span></span></i>
+            </p>
+            <p>
+                <input type="submit" id="register" >
+            </p>
+        </form>
+        <div id="continue-as-a-guest-wrap">
+            <p>Already a member?<a asp-page="/Index">Sign in</a></p>
+        </div><!--create-account-wrap-->
+    </div><!--login-form-wrap-->
+    <!-- partial -->
+</body>

@@ -1,0 +1,19 @@
+﻿@page
+@model CookingOrganizer.Pages.RecipeDetailsModel
+@{
+    
+}
+    <ul class="card-wrapper">
+        <li class="recipe-card">
+            <img class="recipe-card-image" src="data:image/jpg;base64, @Model.RecipeImageToBytes((Model.GetRecipe))" alt='No image provided for that recipe' />
+            <p><strong>Recipe Name:</strong></p>
+            <p>@Model.GetRecipe.Name</p>
+            <p><strong>Recipe Ingredients:</strong></p>
+            <p>@Model.GetRecipe.Ingredients</p>
+            <p><strong>Recipe Description:</strong></p>
+            <p>@Model.GetRecipe.Description</p>
+            <p><strong>Recipe Owner:</strong></p>
+            <p>@Model.GetRecipe.Owner</p>
+        </li>
+    </ul>
+

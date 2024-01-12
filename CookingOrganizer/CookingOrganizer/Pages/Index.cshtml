@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    //ViewData["Title"] = "Home page";
+}
+
+<body class="home">
+    <div id="login-form-wrap">
+        <h2>Login</h2>
+        <form id="login-form" method="post">
+            <p>
+                <input type="text" asp-for="User.Name" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+                <span asp-validation-for="User.Name"></span>
+            </p>
+            <p>
+                <input type="password" asp-for="User.Password" placeholder=" Password" required><i class="validation"><span></span><span></span></i>
+                <span asp-validation-for="User.Password" ></span>
+                
+            </p>
+            <p>
+                <input type="submit" id="login">
+            </p>
+        </form>
+        <div id="continue-as-a-guest-wrap">
+            <p>Not a member?<a asp-page="/Register">Sign up</a></p>
+        </div><!--create-account-wrap-->
+    </div><!--login-form-wrap-->
+    <!-- partial -->
+</body>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

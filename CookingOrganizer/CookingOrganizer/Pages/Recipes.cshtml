@@ -1,0 +1,38 @@
+﻿@page
+@using LogicLayer;
+
+@model CookingOrganizer.Pages.RecipesModel
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="recipePage">
+    <div class="navbar">
+        <a asp-page="/Home">Home</a>
+        <a asp-page="/Recipes">Our recipes</a>
+        <a asp-page="/SuggestRecipe">Suggest a recipe</a>
+        <a asp-page="/Logout">Logout</a>
+    </div>
+    <div class="recipes">
+
+        <div class="recipesinfo">
+        </div>
+        @{
+            @foreach (Recipe recipe in Model.Recipes)
+            {
+                <ul class="card-wrapper">
+                    <li class="recipe-card">
+                        <img class="recipe-card-image" src="data:image/jpg;base64, @Model.RecipeImageToBytes(recipe)" alt='No image provided for that recipe' />
+
+                        <p>Recipe Ingredients:</p>
+                        <p>@recipe.Ingredients</p>
+                        <h3><a asp-page="RecipeDetails" asp-route-id="@recipe.Id" class="btn btn-primary">More details...</a></h3>
+                    </li>
+                </ul>
+            }
+        }
+    </div>
+</body>
